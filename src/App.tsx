@@ -1,24 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import InsertComponent from './customComponent/InsertComponent';
+import ListPost from './customComponent/ListPost';
+import Content from './customComponent/Content'
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [posts, setPosts] = useState<string[]>([]);
+
+  const handleAddPost = () => {
+    const newPost = prompt('Inserisci il tuo post:');
+    if (newPost) {
+      setPosts([...posts, newPost]);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InsertComponent onAddPost={handleAddPost}></InsertComponent>
+      <Content posts={posts}></Content>
+      <ListPost></ListPost>
     </div>
   );
 }

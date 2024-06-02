@@ -1,0 +1,29 @@
+.InsertComponent {
+  background-color: #4CAF50;
+  color: rgb(19, 49, 15);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.InsertComponent h1 {
+margin: 0;
+}
+
+.InsertComponent button {
+background-color: #fff;
+border: none;
+color: #1c401d;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.InsertComponent button:hover {
+background-color: #45a049;
+}
